@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mariyam's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --chiffon-bg: #fffaf7;
+      --primary: #d8b4a0;
+      --accent: #a97477;
+      --text: #4d4d4d;
+      --hover: #c59c90;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--chiffon-bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 85%;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary);
+      transition: transform 0.4s ease;
+    }
+
+    .header img:hover {
+      transform: scale(1.05);
+    }
+
+    .header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--accent);
+      margin: 15px 0 5px;
+    }
+
+    .header p {
+      font-size: 1rem;
+      color: #777;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin: 20px 0 35px;
+    }
+
+    .contact-info p {
+      font-size: 1.05rem;
+      margin: 8px 0;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+      color: var(--hover);
+    }
+
+    .navigation {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .navigation a {
+      display: inline-block;
+      padding: 10px 18px;
+      margin: 0 10px 10px 10px;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      font-weight: 500;
+    }
+
+    .navigation a:hover {
+      background-color: var(--hover);
+      transform: translateY(-3px);
+    }
+
+    .section-content h2 {
+      color: var(--accent);
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .section-content div {
+      background-color: #fdf1ec;
+      padding: 18px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--primary);
+      border-radius: 8px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .section-content div:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .section-content ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .section-content ul li {
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 0.85em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="img.jpg" alt="Mariyam's Photo">
+      <h1>Mariyam</h1>
+      <p>Aspiring Developer | Student</p>
+    </div>
+
+    <div class="contact-info">
+      <p>Phone: <a href="tel:+917385660481">+91 7385660481</a></p>
+      <p>Email: <a href="mailto:123mariyam7003@sjcem.edu.in">123mariyam7003@sjcem.edu.in</a></p>
+    </div>
+
+    <div class="navigation">
+      <a href="my_portfolio/day1/index.html">Day 1</a>
+      <a href="my_portfolio/day2/index.html">Day 2</a>
+      <a href="my_portfolio/day3/index.html">Day 3</a>
+      <a href="my_portfolio/day4/index.html">Day 4</a>
+      
+    </div>
+
+    <div class="section-content">
+      <h2 id="day1">Day 1 Work</h2>
+      <div>
+        <p>Developed a Portfolio</p>
+        <ul>
+          <li>Task 1 completed: Gracefully</li>
+          <li>Learned: Revised HTML5 and CSS with basics of Javascript</li>
+          <li>Project Link: <a href="my_portfolio/day1/index.html">Link to Day 1 project</a></li>
+        </ul>
+      </div>
+
+      <h2 id="day2">Day 2 Work</h2>
+      <div>
+        <p>Practiced HTML forms and CSS styling. Enhanced my Portfolio</p>
+      </div>
+
+      <h2 id="day3">Day 3 Work</h2>
+      <div>
+        <p>Started learning Tailwind CSS and DailyUI</p>
+      </div>
+
+      <h2 id="day4">Day 4 Work</h2>
+      <div>
+        <p>Built a small E-commerce shopping site</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>&copy; 2025 Mariyam. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>

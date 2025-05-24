@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chiffon Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            chiffonLight: '#fff8f0',
+            chiffonAccent: '#b98ca7',
+            chiffonText: '#886a7e',
+            darkBg: '#1c1c1c',
+            darkHeader: '#332c2c',
+            acceptBtn: '#a1cbbb',
+            rejectBtn: '#f2a6a6'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-chiffonLight text-chiffonText transition-colors duration-300 dark:bg-darkBg dark:text-white">
+  <header class="bg-[#f2e9e4] dark:bg-darkHeader sticky top-0 z-50 px-4 py-3 flex justify-between items-center shadow">
+    <h1 class="text-chiffonAccent font-bold text-xl">Chiffon Shop</h1>
+    <div class="flex items-center space-x-4">
+      <button id="menuToggle" class="md:hidden text-2xl">&#9776;</button>
+      <nav id="navLinks" class="hidden md:flex space-x-6 bg-[#f2e9e4] dark:bg-darkHeader md:bg-transparent md:dark:bg-transparent absolute md:relative top-16 md:top-0 right-4 md:right-0 flex-col md:flex-row rounded-lg p-4 md:p-0 shadow md:shadow-none">
+        <a href="index.html" class="hover:text-chiffonAccent">Portfolio</a>
+        <a href="shop.html" class="hover:text-chiffonAccent">Shop</a>
+        <a href="product.html" class="hover:text-chiffonAccent">Products</a>
+        <button onclick="toggleMode()" id="toggleIcon" class="ml-2 text-xl">
+          🌙
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto text-center px-4 py-16">
+    <h2 class="text-chiffonAccent text-3xl font-semibold mb-4">Welcome to Mariyam's Chiffon Shop!</h2>
+    <p class="text-lg mb-6">
+      Browse our beautiful chiffon collection of dresses, scarves, and accessories.
+    </p>
+    <a href="product.html" class="bg-chiffonAccent text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#d6abc2] transition">
+      Let’s Shop
+    </a>
+  </main>
+
+  <!-- Cookie Consent Popup -->
+  <div id="cookieConsent" class="fixed bottom-4 right-4 bg-white dark:bg-darkHeader text-chiffonText dark:text-white border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg p-4 w-72 max-w-full z-50 hidden">
+    <p class="mb-3 text-sm">
+      This site uses cookies to improve your shopping experience.
+    </p>
+    <div class="flex justify-end space-x-2">
+      <button onclick="acceptCookies()" class="bg-acceptBtn text-white px-4 py-1.5 rounded font-semibold">Accept</button>
+      <button onclick="rejectCookies()" class="bg-rejectBtn text-white px-4 py-1.5 rounded font-semibold">Reject</button>
+    </div>
+  </div>
+
+  <script>
+    // Toggle Dark Mode
+    function toggleMode() {
+      const html = document.documentElement;
+      const icon = document.getElementById("toggleIcon");
+      html.classList.toggle("dark");
+      icon.textContent = html.classList.contains("dark") ? "☀️" : "🌙";
+    }
+
+    // Mobile Navbar Toggle
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("hidden");
+    });
+
+    // Cookie Consent Logic
+    function acceptCookies() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      document.getElementById('cookieConsent').classList.add('hidden');
+    }
+
+    function rejectCookies() {
+      localStorage.setItem('cookieConsent', 'rejected');
+      alert("You rejected cookies. Some features may be limited.");
+      document.getElementById('cookieConsent').classList.add('hidden');
+    }
+
+    window.addEventListener('load', () => {
+      const consent = localStorage.getItem('cookieConsent');
+      if (consent !== 'accepted' && consent !== 'rejected') {
+        document.getElementById('cookieConsent').classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
